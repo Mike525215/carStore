@@ -1,8 +1,9 @@
 import './App.css';
+import {Home} from './components/Home/Home';
 
 const App = () => {
     return (
-        <h1>Welcome to React JS</h1>
+        <Home />
     );
 }
 
