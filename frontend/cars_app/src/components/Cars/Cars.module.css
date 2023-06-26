@@ -1,0 +1,17 @@
+.cars {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.car {
+    width: 80%;
+}
+
+.carImage {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
