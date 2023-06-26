@@ -1,17 +1,43 @@
 .cars {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 15px;
+    column-gap: 15px;
+    width: 90%;
     margin: 0 auto;
+    margin-top: 30px;
 }
 
 .car {
-    width: 80%;
+    border: 1px solid #fff;
+    margin-bottom: 20px;
+}
+
+.make,
+.price{
+    margin: 10px;
+    font-size: 17px;
+}
+
+.readMore {
+    padding: 5px 20px 5px 20px;
+    font-size: 17px;
+    border: none;
+    border-radius: 10px;
+    margin: 10px 0px 10px 10px;
+    cursor: pointer;
+
 }
 
 .carImage {
     width: 100%;
-    height: 250px;
+    height: 300px;
     object-fit: cover;
+}
+
+@media (max-width: 575px) {
+    .cars {
+        width: 90%;
+        grid-template-columns: 1fr;
+    }
 }
