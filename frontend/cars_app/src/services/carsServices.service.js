@@ -12,6 +12,10 @@ const services = {
             method: 'POST',
             body: data
         });
+    },
+    async getCar(id) {
+        const request = await fetch('http://127.0.0.1:8000/api/v1/cars/' + id);
+        return request;
     }
 };
 
