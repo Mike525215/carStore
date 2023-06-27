@@ -25,10 +25,3 @@
     height: 300px;
     object-fit: cover;
 }
-
-@media (max-width: 575px) {
-    .cars {
-        width: 90%;
-        grid-template-columns: 1fr;
-    }
-}
