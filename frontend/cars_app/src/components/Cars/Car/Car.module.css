@@ -1,0 +1,34 @@
+
+.car {
+    border: 1px solid #fff;
+    margin-bottom: 20px;
+}
+
+.make,
+.price{
+    margin: 10px;
+    font-size: 17px;
+}
+
+.readMore {
+    padding: 5px 20px 5px 20px;
+    font-size: 17px;
+    border: none;
+    border-radius: 10px;
+    margin: 10px 0px 10px 10px;
+    cursor: pointer;
+
+}
+
+.carImage {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+@media (max-width: 575px) {
+    .cars {
+        width: 90%;
+        grid-template-columns: 1fr;
+    }
+}
