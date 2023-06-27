@@ -6,9 +6,10 @@ const Cars = (props) => {
             {props.cars.map((car) => {
                 return (
                     <div className={s.car}>
-                        <p>{car.make}</p>
-                        <p>{car.price}</p>
                         <img className={s.carImage} src={car.image} alt="none"/>
+                        <p className={s.make}>Make: {car.make}</p>
+                        <p className={s.price}>Price: ${car.price}</p>
+                        <button className={s.readMore}>Read more</button>
                     </div>
                 );
             })}
