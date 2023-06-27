@@ -1,0 +1,21 @@
+main {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+.backLink {
+    color: #fff;
+    text-decoration: none;
+}
+
+.backLink:hover {
+    color: #8943bf;
+}
+
+@media (max-width: 750px) {
+   main {
+    width: 90%;
+   }
+}
+
