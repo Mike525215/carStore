@@ -2,6 +2,16 @@ const services = {
     async cars() {
         const request = await fetch('http://127.0.0.1:8000/api/v1/cars/');
         return request;
+    },
+    async addCar(make, price, image) {
+        const data = new FormData();
+        data.append('make', make);
+        data.append('price', price);
+        data.append('image', image);
+        await fetch('http://127.0.0.1:8000/api/v1/cars/', {
+            method: 'POST',
+            body: data
+        });
     }
 };
 
