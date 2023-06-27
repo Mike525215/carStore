@@ -32,6 +32,18 @@
     font-size: 17px;
 }
 
+.title {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.title > span {
+    font-size: 50px;
+    font-weight: 700;
+}
+
 @media (max-width: 575px) {
     .addCar {
         width: 80%;
@@ -43,4 +55,7 @@
         width: 60%;
     }
 
+    .title {
+        text-align: center;
+    }
 }
