@@ -1,9 +1,12 @@
 import './App.css';
 import {Home} from './components/Home/Home';
+import {CarsRoutes} from './routes/routes';
 
 const App = () => {
     return (
-        <Home />
+        <>
+            <CarsRoutes element={Home} />
+        </>
     );
 }
 
