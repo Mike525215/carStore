@@ -1,4 +1,5 @@
 import s from './Car.module.css';
+import {Link} from 'react-router-dom';
 
 const Car = (props) => {
     return (
@@ -6,7 +7,7 @@ const Car = (props) => {
             <img className={s.carImage} src={props.car.image} alt="none"/>
             <p className={s.make}>Make: {props.car.make}</p>
             <p className={s.price}>Price: ${props.car.price}</p>
-            <button className={s.readMore}>Read more</button>
+            <Link to={'/cars/' + props.car.id} className={s.readMore}>Read more</Link>
         </div>
     );
 };

@@ -11,13 +11,23 @@
 }
 
 .readMore {
-    padding: 5px 20px 5px 20px;
+    width: 130px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 17px;
-    border: none;
+    background: #fff;
+    color: #333;
     border-radius: 10px;
     margin: 10px 0px 10px 10px;
     cursor: pointer;
+    text-decoration: none;
 
+}
+
+.readMore:hover {
+    opacity: 0.8;
 }
 
 .carImage {
