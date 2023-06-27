@@ -7,3 +7,10 @@
     margin: 0 auto;
     margin-top: 30px;
 }
+
+@media (max-width: 750px) {
+    .cars {
+        width: 90%;
+        grid-template-columns: 1fr;
+    }
+}
