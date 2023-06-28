@@ -16,13 +16,11 @@ class CarsAPIView(APIView):
         return Response(serializer.data)
 
     def post(self, request, *args, **kwargs):
-        data = Car.objects.create(
-            make=request.data.get('make'),
-            price=request.data.get('price'),
-            image=request.data.get('image')
-        )
-        serializer = CarSerializer(request.data)
+        serializer = CarSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
         return Response(serializer.data)
+
     def put(self, request, *args, **kwargs):
         queryset = Car.objects.get(id=kwargs.get('pk'))
         serializer = CarSerializer(data=request.data, instance=queryset)
