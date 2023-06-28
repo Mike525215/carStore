@@ -9,6 +9,7 @@ const Home = () => {
     const [price, setPrice] = useState('');
     const [image, setImage] = useState('');
 
+
     const carsGet = async () => {
         const request = await services.cars();
         const result = await request.json();
