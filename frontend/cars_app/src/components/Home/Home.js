@@ -4,11 +4,11 @@ import {Cars} from '../Cars/Cars';
 import {services} from '../../services/carsServices.service.js';
 
 const Home = () => {
+
     const [cars, setCars] = useState([]);
     const [make, setMake] = useState('');
     const [price, setPrice] = useState('');
     const [image, setImage] = useState('');
-
 
     const carsGet = async () => {
         const request = await services.cars();
@@ -16,9 +16,10 @@ const Home = () => {
         setCars(result);
     }
 
-    useEffect(() => {
+    const carsLoad = useEffect(() => {
         carsGet();
     }, []);
+
 
     return (
         <div>
