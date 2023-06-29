@@ -16,10 +16,9 @@ const Home = () => {
         setCars(result);
     }
 
-    const carsLoad = useEffect(() => {
+    useEffect(() => {
         carsGet();
     }, []);
-
 
     return (
         <div>
