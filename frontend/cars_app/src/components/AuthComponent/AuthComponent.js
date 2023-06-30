@@ -3,8 +3,7 @@ import {useState} from 'react';
 import {Link} from 'react-router-dom';
 import {services} from '../../services/carsServices.service.js';
 
-const AuthComponent = () => {
-
+const AuthComponent = (props) => {
     const [username, setName] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
@@ -16,8 +15,8 @@ const AuthComponent = () => {
     if (login === 'true') {
         html =
             <>
-                <h2>Login was success! To move on home page click link below. </h2>
-                <Link to='/cars/'>Link</Link>
+                <span className={s.text}>Login was success! To move on home page click link below.</span>
+                <Link to='/cars/' className={s.link}>Link</Link>
             </>
     } else {
 
@@ -67,6 +66,7 @@ const AuthComponent = () => {
                                     console.log(result);
                                     if (result.auth_token) {
                                         setLogin('true');
+                                        localStorage.setItem('token', JSON.stringify(result.auth_token));
                                     } else {
                                         console.log(result);
                                     }
