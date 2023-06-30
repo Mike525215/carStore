@@ -1,0 +1,44 @@
+.authForm {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    margin: 0 auto;
+    margin-top: 20px;
+    box-shadow: 0.05px 0.05px 15px #fff;
+    border-radius: 10px;
+}
+
+.username,
+.password,
+.email {
+    height: 30px;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 25px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    font-size: 17px;
+    opacity: 0.85;
+
+}
+
+.authBtn {
+    width: 130px;
+    height: 27px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 auto;
+    margin-top: 25px;
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    opacity: 0.75;
+    transition: opacity 0.5s ease-in;
+}
+
+.authBtn:hover {
+    opacity: 1;
+}
