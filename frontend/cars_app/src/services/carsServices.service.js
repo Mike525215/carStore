@@ -16,6 +16,17 @@ const services = {
     async getCar(id) {
         const request = await fetch('http://127.0.0.1:8000/api/v1/cars/' + id);
         return request;
+    },
+    async auth(username, password, email) {
+        const data = new FormData();
+        data.append('username', username);
+        data.append('password', password);
+        data.append('email', email);
+        const request = await fetch('http://127.0.0.1:8000/api/v1/auth/users/', {
+            method: 'POST',
+            body: data
+        });
+        return request;
     }
 };
 
