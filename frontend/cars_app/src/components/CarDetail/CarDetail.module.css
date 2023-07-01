@@ -1,21 +1,27 @@
 main {
-    width: 80%;
-    margin: 0 auto;
-    margin-top: 25px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    margin: 25px 0px 0px 25px;
 }
 
 .backLink {
     color: #fff;
     text-decoration: none;
+    width: 50px;
+    height: 20px;
 }
+
 
 .backLink:hover {
     color: #8943bf;
 }
 
-@media (max-width: 750px) {
-   main {
-    width: 90%;
-   }
+@media (max-width: 850px) {
+       main {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+        width: 90%;
+    }
 }
 

@@ -17,8 +17,8 @@ const CarDetail = () => {
     }, []);
     return (
         <main>
-            <Car car={car} />
             <Link className={s.backLink} to='/cars'>HOME</Link>
+            <Car car={car} />
         </main>
     );
 }
