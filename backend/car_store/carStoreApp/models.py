@@ -4,5 +4,5 @@ class Car(models.Model):
     make = models.CharField(max_length=100)
     price = models.FloatField(blank=True)
     image = models.URLField(blank=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.CharField(max_length=50)
 
