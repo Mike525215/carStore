@@ -1,12 +1,15 @@
 import s from './SignUp.module.css';
 import {services} from '../../services/carsServices.service.js';
 import {useNavigate} from 'react-router-dom';
+import {useState} from 'react';
 
 const Login = (props) => {
     const navigate = useNavigate();
+    const [nameError, setNError] = useState('');
 
     return (
         <div className={s.authForm}>
+            <span className={s.errorN}>{nameError}</span>
             <input type="text" placeholder="Username..." className={s.username}
                 onChange={e => props.setName(e.target.value)} value={props.username} />
             <input type="password" placeholder="Password..." className={s.password}
@@ -25,7 +28,7 @@ const Login = (props) => {
                                 navigate('/cars/');
                                 window.location.reload();
                             } else {
-                                console.log(result);
+                                setNError('Incorrect username or password')
                             }
                         }
                     }>
