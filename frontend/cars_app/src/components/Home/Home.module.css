@@ -44,6 +44,60 @@
     font-weight: 700;
 }
 
+.message {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 25px 0px 0px 25px;
+    display: block;
+}
+
+.link {
+    background: #fff;
+    color: #333;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 10px;
+    display: block;
+    width: 140px;
+    padding: 5px;
+    margin: 25px 0px 0px 25px;
+    text-align: center;
+    font-weight: 550;
+}
+
+.userInfo {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.name {
+    font-weight: 600;
+    margin: 25px 25px 0px 0px;
+    font-size: 20px;
+}
+
+.outBtn {
+    background: #fff;
+    color: #333;
+    width: 125px;
+    height: 27px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 25px 25px 0px 0px;
+    font-size: 17px;
+}
+
+.logo {
+    font-weight: 750;
+    font-size: 25px;
+    color: #fff;
+    margin-top: 20px;
+}
+
 @media (max-width: 575px) {
     .addCar {
         width: 80%;

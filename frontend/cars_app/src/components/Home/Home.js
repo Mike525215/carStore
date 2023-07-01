@@ -1,6 +1,6 @@
 import s from './Home.module.css';
-import {useState, useEffect, createContext} from 'react';
-import {Link} from 'react-router-dom';
+import {useState, useEffect} from 'react';
+import {useNavigate, Link} from 'react-router-dom';
 import {Cars} from '../Cars/Cars';
 import {services} from '../../services/carsServices.service.js';
 
@@ -11,14 +11,13 @@ const Home = (props) => {
     const [price, setPrice] = useState('');
     const [image, setImage] = useState('');
     const [msg, setMsg] = useState('');
+    const navigate = useNavigate();
 
-    let html = '';
     const carsGet = async () => {
         const request = await services.cars(props.token);
         const result = await request.json();
         if (result.detail) {
             setMsg(result.detail);
-            console.log(props.token);
         } else {
             setCars(result);
         }
@@ -26,14 +25,32 @@ const Home = (props) => {
 
     useEffect(() => {
         carsGet();
-    }, []);
+    });
 
     if (msg) {
-        return <span>{msg}</span>;
+        return (
+            <>
+                <span className={s.message}>First of all, you have to sign up!</span>
+                <Link className={s.link} to="/auth/">Sign Up page</Link>
+            </>
+        );
     } else {
 
     return (
         <div>
+           <div className={s.userInfo}>
+               <span className={s.logo}>Car Collector</span>
+               <div>
+                   <span className={s.name}>{props.username}</span>
+                   <button className={s.outBtn} onClick={
+                       async () => {
+                           await services.logout(props.username, props.password, props.token);
+                           navigate('/auth/');
+                       }
+                   }>Logout</button>
+               </div>
+
+           </div>
            <section className={s.addCar}>
                 <input type="text" className={s.carMake} placeholder="Car make"
                        onChange={e => setMake(e.target.value)} value={make} />
