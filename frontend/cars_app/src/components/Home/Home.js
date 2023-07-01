@@ -42,7 +42,7 @@ const Home = (props) => {
         <div>
            <div className={s.userInfo}>
                <span className={s.logo}>Car Collector</span>
-               <div>
+               <div className={s.userBlock}>
                    <span className={s.name}>{props.username}</span>
                    <button className={s.outBtn} onClick={
                        async () => {

@@ -37,12 +37,21 @@
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+
+.userBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
 }
 
 .name {
     font-weight: 600;
-    margin: 25px 25px 0px 0px;
     font-size: 20px;
+    margin-right: 20px;
 }
 
 .outBtn {
@@ -53,7 +62,6 @@
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    margin: 25px 25px 0px 0px;
     font-size: 17px;
 }
 
@@ -61,5 +69,22 @@
     font-weight: 750;
     font-size: 25px;
     color: #fff;
-    margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    .userInfo {
+        width: 95%;
+    }
+    .logo {
+        font-size: 20px;
+    }
+
+    .name {
+        font-size: 17px;
+        margin-right: 10px;
+    }
+
+    .outBtn {
+        width: 100px;
+    }
 }
