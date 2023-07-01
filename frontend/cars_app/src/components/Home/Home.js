@@ -26,7 +26,7 @@ const Home = (props) => {
 
     useEffect(() => {
         carsGet();
-    });
+    }, []);
 
     if (msg) {
         return (
@@ -52,7 +52,8 @@ const Home = (props) => {
                </div>
            </div>
             <AddForm make={make} price={price} image={image} carsGet={carsGet}
-                     setMake={setMake} setPrice={setPrice} setImage={setImage} token={props.token} />
+                     setMake={setMake} setPrice={setPrice} setImage={setImage} token={props.token}
+                     pk={JSON.parse(localStorage.getItem('id'))} />
             <div className={s.title}><span>Cars catalog</span></div>
 
             <Cars cars={cars} />
