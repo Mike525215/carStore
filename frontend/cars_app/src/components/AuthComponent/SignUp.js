@@ -28,6 +28,7 @@ const SignUp = (props) => {
                                 const result = await request.json();
                                 if (result.id && result.username) {
                                     props.setStatus('true');
+                                    localStorage.setItem('id', JSON.stringify(result.id));
                                 } else {
                                     if (result.username) {
                                         if (result.username[0] === 'A user with that username already exists.') {
