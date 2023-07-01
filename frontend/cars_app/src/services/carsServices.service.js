@@ -10,18 +10,20 @@ const services = {
         return request;
     },
 
-    async addCar(make, price, image, token) {
+    async addCar(make, price, image, token, username) {
         const headers = new Headers();
         headers.append('Authorization', 'Token ' + token)
         const data = new FormData();
         data.append('make', make);
         data.append('price', price);
         data.append('image', image);
-        await fetch('http://127.0.0.1:8000/api/v1/cars/', {
+        data.append('user', username);
+        const request = await fetch('http://127.0.0.1:8000/api/v1/cars/', {
             method: 'POST',
             headers: headers,
             body: data
         });
+        return request;
     },
 
     async getCar(id) {
