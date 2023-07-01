@@ -10,13 +10,16 @@ const services = {
         return request;
     },
 
-    async addCar(make, price, image) {
+    async addCar(make, price, image, token) {
+        const headers = new Headers();
+        headers.append('Authorization', 'Token ' + token)
         const data = new FormData();
         data.append('make', make);
         data.append('price', price);
         data.append('image', image);
         await fetch('http://127.0.0.1:8000/api/v1/cars/', {
             method: 'POST',
+            headers: headers,
             body: data
         });
     },
