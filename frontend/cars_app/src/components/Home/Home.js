@@ -2,6 +2,7 @@ import s from './Home.module.css';
 import {useState, useEffect} from 'react';
 import {useNavigate, Link} from 'react-router-dom';
 import {Cars} from '../Cars/Cars';
+import {AddForm} from './AddForm';
 import {services} from '../../services/carsServices.service.js';
 
 
@@ -49,26 +50,9 @@ const Home = (props) => {
                        }
                    }>Logout</button>
                </div>
-
            </div>
-           <section className={s.addCar}>
-                <input type="text" className={s.carMake} placeholder="Car make"
-                       onChange={e => setMake(e.target.value)} value={make} />
-                <input type="text" className={s.carPrice} placeholder="Car price"
-                       onChange={e => setPrice(e.target.value)} value={price} />
-                <input type="text" className={s.carImage} placeholder="Car url"
-                       onChange={e => setImage(e.target.value)} value={image} />
-                <button className={s.addButton}
-                       onClick={
-                            async () => {
-                                await services.addCar(make, price, image);
-                                setMake('');
-                                setPrice('');
-                                setImage('');
-                                carsGet();
-                            }
-                        }>Create</button>
-            </section>
+            <AddForm make={make} price={price} image={image} carsGet={carsGet}
+                     setMake={setMake} setPrice={setPrice} setImage={setImage} token={props.token} />
             <div className={s.title}><span>Cars catalog</span></div>
 
             <Cars cars={cars} />
