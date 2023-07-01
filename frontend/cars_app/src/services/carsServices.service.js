@@ -47,6 +47,20 @@ const services = {
             body: data
         });
         return request;
+    },
+
+    async logout(username, password, token) {
+        const headers = new Headers();
+        headers.append('Authorization', 'Token ' + token);
+        const data = new FormData();
+        data.append('username', username);
+        data.append('password', password);
+        const request = await fetch('http://127.0.0.1:8000/auth/token/logout/', {
+            method: 'POST',
+            body: data,
+            headers: headers
+        })
+        return request;
     }
 
 
