@@ -1,7 +1,4 @@
-import s from './AuthComponent.module.css';
 import {useState} from 'react';
-import {Link, useNavigate} from 'react-router-dom';
-import {services} from '../../services/carsServices.service.js';
 import {SignUp} from './SignUp';
 import {Login} from './Login';
 
@@ -10,7 +7,6 @@ const AuthComponent = (props) => {
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
     const [signUp, setStatus] = useState('false');
-    const [login, setLogin] = useState('false');
 
     let html = '';
 

@@ -13,7 +13,7 @@ const AddForm = (props) => {
                 <button className={s.addButton}
                        onClick={
                             async () => {
-                                await services.addCar(props.make, props.price, props.image, props.token, props.pk);
+                                await services.addCar(props.make, props.price, props.image, props.token, props.username);
                                 props.setMake('');
                                 props.setPrice('');
                                 props.setImage('');

@@ -20,7 +20,8 @@ const Home = (props) => {
         if (result.detail) {
             setMsg(result.detail);
         } else {
-            setCars(result);
+            const carArray = result.filter(car => car.user === props.username);
+            setCars(carArray);
         }
     }
 
@@ -53,7 +54,7 @@ const Home = (props) => {
            </div>
             <AddForm make={make} price={price} image={image} carsGet={carsGet}
                      setMake={setMake} setPrice={setPrice} setImage={setImage} token={props.token}
-                     pk={JSON.parse(localStorage.getItem('id'))} />
+                     username={props.username} />
             <div className={s.title}><span>Cars catalog</span></div>
 
             <Cars cars={cars} />
