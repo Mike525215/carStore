@@ -66,6 +66,27 @@ const services = {
             headers: headers
         })
         return request;
+    },
+    async carChange(make, price, image, token, id) {
+        const headers = new Headers();
+        headers.append('Authorization', 'Token ' + token);
+        const data = new FormData();
+        data.append('make', make);
+        data.append('price', price);
+        data.append('image', image);
+        await fetch('http://127.0.0.1:8000/api/v1/cars/' + id + '/', {
+            method: 'PATCH',
+            headers: headers,
+            body: data
+        });
+    },
+    async deleteCar(id, token) {
+        const headers = new Headers();
+        headers.append('Authorization', 'Token ' + token);
+        await fetch('http://127.0.0.1:8000/api/v1/cars/' + id + '/', {
+            method: 'DELETE',
+            headers: headers
+        });
     }
 
 
