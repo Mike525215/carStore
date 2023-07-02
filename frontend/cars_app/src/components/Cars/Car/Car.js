@@ -24,7 +24,13 @@ const Car = (props) => {
                             onClick={() => {
                                 setEdit('true');
                             }}>Edit</button>
-                    <button className={s.deleteBtn + ' ' + s.btn}>Delete</button>
+                    <button className={s.deleteBtn + ' ' + s.btn}
+                            onClick={
+                                async () => {
+                                    await services.deleteCar(props.car.id, props.token);
+                                    props.carsGet();
+                                }
+                            }>Delete</button>
                 </div>
             </div>
     } else {
@@ -37,9 +43,14 @@ const Car = (props) => {
                 <input type="text" className={s.image} placeholder="Car image"
                            onChange={e => setImage(e.target.value)} value={image} />
                 <button className={s.save + ' ' + s.btn}
-                    onClick={() => {
-                        setEdit('false');
-                    }}>Save</button>
+                    onClick={
+                        async () => {
+                            await services.carChange(make, price, image, props.token, props.car.id);
+                            setEdit('false');
+                            props.carsGet();
+                            console.log(props.car);
+                        }
+                    }>Save</button>
             </div>
     }
     return html;
