@@ -1,6 +1,5 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import {useState} from 'react';
-
+import {PageNotFound} from './PageNotFound'
 const CarsRoutes = (props) => {
 
     const token = JSON.parse(localStorage.getItem('token')) || '';
@@ -14,7 +13,7 @@ const CarsRoutes = (props) => {
                                             password={password} />} path='/cars/' />
                 <Route element={<props.detail />} path='/cars/:id' />
                 <Route element={<props.auth />} path='/auth/' />
-                <Route element={<div>Page Not Found</div>} path='*' />
+                <Route element={<PageNotFound />} path='*' />
             </Routes>
         </BrowserRouter>
     );
