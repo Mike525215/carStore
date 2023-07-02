@@ -57,7 +57,7 @@ const Home = (props) => {
                      username={props.username} />
             <div className={s.title}><span>Cars catalog</span></div>
 
-            <Cars cars={cars} />
+            <Cars cars={cars} token={props.token} carsGet={carsGet} />
         </div>
     );
     };
