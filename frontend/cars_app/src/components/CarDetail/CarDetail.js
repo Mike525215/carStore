@@ -18,7 +18,11 @@ const CarDetail = () => {
     return (
         <main>
             <Link className={s.backLink} to='/cars'>HOME</Link>
-            <Car car={car} />
+            <div className={s.car}>
+                <img className={s.carImage} src={car.image} alt="none"/>
+                <p className={s.make}>Make: {car.make}</p>
+                <p className={s.price}>Price: ${car.price}</p>
+            </div>
         </main>
     );
 }
